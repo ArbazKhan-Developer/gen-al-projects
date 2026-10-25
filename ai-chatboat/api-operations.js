@@ -2,11 +2,13 @@ const buildPrompt = require('./prompts');
 const generateText = require('./bedrock');
 
 
-function processApiRequest(req){
+async function processApiRequest(req){
 
     try {
-        const body = request.body
-        console.log("body", body)
+        const prompt = await buildPrompt(req);
+        const response = await generateText(prompt);
+        console.log("response", response)
+        return response;
     } catch (error) {
         console.error("error processing request", error)
     }

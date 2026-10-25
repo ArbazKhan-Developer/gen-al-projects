@@ -10,6 +10,9 @@ async function buildPrompt(prmpt){
         1. Use only facts supplied by the candidate.
         2. Improve clarity, grammar, and professional wording.
         3. provide a short email content with a maximum of 100 words.
+        4. do not use more tokens and generate short optimised email content.
+
+        email content: ${prmpt}
 
         `
     } catch (error) {
